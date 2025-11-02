@@ -3466,11 +3466,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sgt\\Downloads\\PIM MARCELO\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "projectUniqueName": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
       "projectName": "ChamadosIA",
-      "projectPath": "C:\\Users\\Sgt\\Downloads\\PIM MARCELO\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "projectPath": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
       "packagesPath": "C:\\Users\\Sgt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sgt\\Downloads\\PIM MARCELO\\ChamadosIA\\ChamadosIA\\obj\\",
+      "outputPath": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Sgt\\AppData\\Roaming\\NuGet\\NuGet.Config"

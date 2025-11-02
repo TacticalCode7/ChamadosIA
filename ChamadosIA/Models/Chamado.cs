@@ -1,5 +1,4 @@
 using System;
-public static List<Chamado> chamados = new();
 
 namespace ChamadosIA.Models
 {
