@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ReTktUzkotA=",
+  "dgSpecHash": "uZgBHQG0ITw=",
   "success": true,
   "projectFilePath": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
   "expectedPackageFiles": [
@@ -91,12 +91,5 @@
     "C:\\Users\\01828376450\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\01828376450\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
