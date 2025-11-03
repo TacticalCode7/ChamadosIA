@@ -1,0 +1,53 @@
+✅ Etapa 1: Estrutura do Projeto ASP.NET MVC
+dotnet new mvc -n ChamadosIA
+
+Erro no Terminal:
+execultar o 
+taskkill /F /IM dotnet.exe
+depois:
+dotnet clean
+dotnet build
+dotnet run
+---
+
+## 🌐 Rotas principais do sistema CATI
+
+### 🏠 Página inicial (se definida como padrão)
+```
+http://localhost:5299/
+```
+
+> Depende do `MapControllerRoute` no `Program.cs`. Se não estiver configurado, redireciona para login ou erro.
+
+---
+
+### 👨‍🔧 Técnico
+
+| Tela                      | Caminho                                             |
+|---------------------------|-----------------------------------------------------|
+| Dashboard do Técnico      | `http://localhost:5299/Tecnico/Dashboard`          |
+| Estatísticas              | `http://localhost:5299/Tecnico/Estatisticas`       |
+
+---
+
+### 🙋‍♂️ Cliente
+
+| Tela                      | Caminho                                             |
+|---------------------------|-----------------------------------------------------|
+| Dashboard do Cliente      | `http://localhost:5299/Cliente/Dashboard`          |
+
+---
+
+### 📋 Chamados (módulo compartilhado)
+
+| Tela                      | Caminho                                             |
+|---------------------------|-----------------------------------------------------|
+| Abrir chamado             | `http://localhost:5299/Chamado/Abrir`              |
+| Meus chamados (cliente)   | `http://localhost:5299/Chamado/MeusChamados`       |
+| Editar chamado            | `http://localhost:5299/Chamado/Editar/{id}`        |
+| Cancelar chamado          | `http://localhost:5299/Chamado/Cancelar/{id}`      |
+| Fila de chamados (técnico)| `http://localhost:5299/Chamado/Fila`               |
+| Em atendimento            | `http://localhost:5299/Chamado/Atendimento`        |
+| Resolvidos                | `http://localhost:5299/Chamado/Resolvidos`         |
+
+---
