@@ -58,4 +58,3 @@ ChamadosIA/
 ## 📄 Licença
 Projeto acadêmico e institucional. Desenvolvido pela equipe do CATI.
 
-estou alterando
