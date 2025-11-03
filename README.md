@@ -58,5 +58,8 @@ ChamadosIA/
 ## ðŸ“„ LicenÃ§a
 Projeto acadÃªmico e institucional. Desenvolvido pela equipe do CATI.
 
+<<<<<<< HEAD
 
 ALTERAÇÃO COMMIT TESTE
+=======
+>>>>>>> 2c1566f218cff20757844b9fb09321221d2e5304

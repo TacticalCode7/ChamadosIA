@@ -5289,25 +5289,41 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\41056968826\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+=======
+    "C:\\Users\\01828376450\\.nuget\\packages\\": {}
+>>>>>>> 2c1566f218cff20757844b9fb09321221d2e5304
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\41056968826\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
       "projectName": "ChamadosIA",
       "projectPath": "C:\\Users\\41056968826\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
       "packagesPath": "C:\\Users\\41056968826\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\41056968826\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "projectName": "ChamadosIA",
+      "projectPath": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "packagesPath": "C:\\Users\\01828376450\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\",
+>>>>>>> 2c1566f218cff20757844b9fb09321221d2e5304
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\41056968826\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+        "C:\\Users\\01828376450\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> 2c1566f218cff20757844b9fb09321221d2e5304
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5331,8 +5347,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -5368,7 +5383,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
