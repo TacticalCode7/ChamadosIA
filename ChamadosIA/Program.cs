@@ -1,34 +1,27 @@
-using ChamadosIA.Data;
-using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar o Entity Framework com SQL Server
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Adicione suporte a sessão
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // tempo de expiração
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
-// Middleware padrÃ£o
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
+// Middleware de sessão precisa vir **antes** do UseAuthorization
 app.UseStaticFiles();
 app.UseRouting();
+
+app.UseSession(); // <-- Adicione aqui
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Conta}/{action=Login}/{id?}");
 
-/*app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Cliente}/{action=Dashboard}/{id?}");*/
-
 app.Run();
-

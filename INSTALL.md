@@ -1,6 +1,6 @@
 # 📦 INSTRUÇÕES DE INSTALAÇÃO
 
-# 🛠️ Instruções de Instalação - CATI
+# 🛠︝ Instruções de Instalação - CATI
 
 Siga os passos abaixo para instalar e executar o projeto CATI localmente.
 
@@ -32,12 +32,12 @@ dotnet clean
 dotnet build
 ```
 
-## ▶️ Executando o projeto
+## ▶︝ Executando o projeto
 
 ```bash
 dotnet run
 ```
-## 🛠️ Solução de erros comuns
+## 🛠︝ Solução de erros comuns
 execultar no Terminal: 
 taskkill /F /IM dotnet.exe
 
@@ -59,7 +59,10 @@ http://localhost:5000
 
 ## 🧪 Login de teste
 - Informe que há um login de teste disponível:
-- Email: teste@cati.com
+- Email: tecnico@cati.com
+- Senha: 123456
+
+- Email: cliente@cati.com
 - Senha: 123456
 
 

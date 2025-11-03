@@ -1,24 +1,36 @@
 using Microsoft.AspNetCore.Mvc;
-using ChamadosIA.Data;
 using ChamadosIA.Models;
 using System.Security.Cryptography;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
 
 namespace ChamadosIA.Controllers
 {
     public class ContaController : Controller
     {
-        // Simula√ß√£o de usu√°rio logado em mem√≥ria
-        private static Usuario usuarioLogado = new Usuario
+        // SimulaÁ„o de usu·rios em memÛria
+        private static List<Usuario> usuarios = new List<Usuario>
         {
-            Id = 1,
-            Email = "teste@cati.com",
-            Telefone = "11999999999",
-            Setor = "Suporte",
-            Tipo = "Tecnico",
-            SenhaHash = GerarHash("123456")
+            new Usuario
+            {
+                Id = 1,
+                Email = "tecnico@cati.com",
+                Telefone = "11999999999",
+                Setor = "Suporte",
+                Tipo = "Tecnico",
+                SenhaHash = GerarHash("123456")
+            },
+            new Usuario
+            {
+                Id = 2,
+                Email = "cliente@cati.com",
+                Telefone = "11888888888",
+                Setor = "Financeiro",
+                Tipo = "Cliente",
+                SenhaHash = GerarHash("123456")
+            }
         };
+
+        private static Usuario? usuarioLogado;
 
         // GET: Login
         public IActionResult Login() => View();
@@ -29,59 +41,66 @@ namespace ChamadosIA.Controllers
         {
             var senhaHash = GerarHash(senha);
 
-            if (email == usuarioLogado.Email && senhaHash == usuarioLogado.SenhaHash)
+            usuarioLogado = usuarios.FirstOrDefault(u => u.Email == email && u.SenhaHash == senhaHash);
+
+            if (usuarioLogado != null)
             {
-                TempData["UsuarioId"] = usuarioLogado.Id;
-                return RedirectToAction("Dashboard", usuarioLogado.Tipo == "Tecnico" ? "Tecnico" : "Cliente");
+                HttpContext.Session.SetInt32("UsuarioId", usuarioLogado.Id);
+
+                if (usuarioLogado.Tipo == "Tecnico")
+                    return RedirectToAction("Dashboard", "Tecnico");
+                else
+                    return RedirectToAction("Dashboard", "Cliente");
             }
 
-            ViewBag.Erro = "Credenciais inv√°lidas";
+            ViewBag.Erro = "Credenciais inv·lidas";
             return View();
         }
 
         // GET: AtualizarConta
         [HttpGet]
-public IActionResult AtualizarConta()
-{
-    if (TempData["UsuarioId"] is not int id || id != usuarioLogado.Id)
-        return RedirectToAction("Login");
+        public IActionResult AtualizarConta()
+        {
+            var id = HttpContext.Session.GetInt32("UsuarioId");
+            if (id == null || usuarioLogado == null || id != usuarioLogado.Id)
+                return RedirectToAction("Login");
 
-    var modelo = new Usuario
-    {
-        Email = usuarioLogado.Email,
-        Telefone = usuarioLogado.Telefone,
-        Setor = usuarioLogado.Setor
-    };
+            var modelo = new Usuario
+            {
+                Email = usuarioLogado.Email,
+                Telefone = usuarioLogado.Telefone,
+                Setor = usuarioLogado.Setor
+            };
 
-    return View(modelo);
-}
-
+            return View(modelo);
+        }
 
         // POST: AtualizarConta
         [HttpPost]
-public IActionResult AtualizarConta(Usuario dados)
-{
-    if (TempData["UsuarioId"] is not int id || id != usuarioLogado.Id)
-        return RedirectToAction("Login");
-
-    if (!string.IsNullOrEmpty(dados.NovaSenha))
-    {
-        if (dados.NovaSenha != dados.ConfirmarSenha)
+        public IActionResult AtualizarConta(Usuario dados)
         {
-            TempData["Erro"] = "‚ùå As senhas n√£o coincidem.";
-            return View(dados);
+            var id = HttpContext.Session.GetInt32("UsuarioId");
+            if (id == null || usuarioLogado == null || id != usuarioLogado.Id)
+                return RedirectToAction("Login");
+
+            if (!string.IsNullOrEmpty(dados.NovaSenha))
+            {
+                if (dados.NovaSenha != dados.ConfirmarSenha)
+                {
+                    TempData["Erro"] = "? As senhas n„o coincidem.";
+                    return View(dados);
+                }
+
+                usuarioLogado.SenhaHash = GerarHash(dados.NovaSenha);
+            }
+
+            usuarioLogado.Email = dados.Email;
+            usuarioLogado.Telefone = dados.Telefone;
+            usuarioLogado.Setor = dados.Setor;
+
+            TempData["Sucesso"] = "? Dados atualizados com sucesso!";
+            return RedirectToAction("Confirmacao");
         }
-
-        usuarioLogado.SenhaHash = GerarHash(dados.NovaSenha);
-    }
-
-    usuarioLogado.Email = dados.Email;
-    usuarioLogado.Telefone = dados.Telefone;
-    usuarioLogado.Setor = dados.Setor;
-
-    TempData["Sucesso"] = "‚úÖ Dados atualizados com sucesso!";
-    return RedirectToAction("Confirmacao");
-}
 
         public IActionResult Confirmacao()
         {
