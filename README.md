@@ -11,7 +11,7 @@ Sistema web para abertura, acompanhamento e gestão de chamados técnicos, desen
 - Adicionar observações e atualizar dados de contato
 - Atualizar dados da conta (senha, email, telefone, endereço)
 
-### 🛠️ Técnico
+### 🛠︝ Técnico
 - Visualizar chamados em fila
 - Atender chamados em andamento
 - Consultar chamados resolvidos e fechados
@@ -57,3 +57,5 @@ ChamadosIA/
 
 ## 📄 Licença
 Projeto acadêmico e institucional. Desenvolvido pela equipe do CATI.
+
+estou alterando
