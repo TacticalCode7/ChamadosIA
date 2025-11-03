@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
+    "net8.0": {
       "Azure.Core/1.24.0": {
         "type": "package",
         "dependencies": {
@@ -3455,35 +3455,35 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0": [
+    "net8.0": [
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.10"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Sgt\\.nuget\\packages\\": {}
+    "C:\\Users\\01828376450\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "projectUniqueName": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
       "projectName": "ChamadosIA",
-      "projectPath": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
-      "packagesPath": "C:\\Users\\Sgt\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sgt\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\",
+      "projectPath": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\ChamadosIA.csproj",
+      "packagesPath": "C:\\Users\\01828376450\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\01828376450\\Documents\\GitHub\\ChamadosIA\\ChamadosIA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Sgt\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\01828376450\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
-        "net9.0"
+        "net8.0"
       ],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {}
         }
       },
@@ -3496,12 +3496,11 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
-      "net9.0": {
-        "targetAlias": "net9.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -3533,7 +3532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.415/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
