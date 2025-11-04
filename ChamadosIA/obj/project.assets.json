@@ -5360,7 +5360,7 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[8.0.17, 8.0.17]"
+            "version": "[8.0.21, 8.0.21]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
