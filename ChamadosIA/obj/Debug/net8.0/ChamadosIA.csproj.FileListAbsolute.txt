@@ -166,3 +166,4 @@ C:\Users\41056968826\Documents\GitHub\ChamadosIA\ChamadosIA\obj\Debug\net8.0\ref
 C:\Users\41056968826\Documents\GitHub\ChamadosIA\ChamadosIA\obj\Debug\net8.0\ChamadosIA.pdb
 C:\Users\41056968826\Documents\GitHub\ChamadosIA\ChamadosIA\obj\Debug\net8.0\ChamadosIA.genruntimeconfig.cache
 C:\Users\41056968826\Documents\GitHub\ChamadosIA\ChamadosIA\obj\Debug\net8.0\ref\ChamadosIA.dll
+C:\Users\41056968826\Documents\GitHub\ChamadosIA\ChamadosIA\bin\Debug\net8.0\Newtonsoft.Json.dll

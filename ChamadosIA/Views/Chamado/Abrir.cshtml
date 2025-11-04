@@ -69,25 +69,25 @@
 </style>
 
 <div class="form-container">
-    <h2>üì® Abrir Chamado</h2>
-    <h4>Classifique o servi√ßo e descreva o problema</h4>
+    <h2>?? Abrir Chamado</h2>
+    <h4>Classifique o serviÁo e descreva o problema</h4>
 
     <form asp-action="Abrir" method="post">
         <div class="form-group">
-            <label for="Servico">Servi√ßo</label>
+            <label for="Servico">ServiÁo</label>
             <select id="Servico" name="Servico" class="form-control" onchange="atualizarCategorias()">
                 <option value="">Selecione...</option>
-                <option value="Hardware">üñ•Ô∏è Hardware</option>
-                <option value="Software">üß† Software</option>
-                <option value="Redes">üåê Redes</option>
-                <option value="Telefonia">‚òéÔ∏è Telefonia</option>
+                <option value="Hardware">??? Hardware</option>
+                <option value="Software">?? Software</option>
+                <option value="Redes">?? Redes</option>
+                <option value="Telefonia">?? Telefonia</option>
             </select>
         </div>
 
         <div class="form-group">
             <label for="Categoria">Categoria</label>
             <select id="Categoria" name="Categoria" class="form-control" onchange="atualizarSubcategorias()">
-                <option value="">Selecione um servi√ßo primeiro</option>
+                <option value="">Selecione um serviÁo primeiro</option>
             </select>
         </div>
 
@@ -99,52 +99,67 @@
         </div>
 
         <div class="form-group">
-            <label for="Titulo">T√≠tulo do Chamado</label>
+            <label for="Titulo">TÌtulo do Chamado</label>
             <input id="Titulo" name="Titulo" class="form-control" readonly />
         </div>
 
         <div class="form-group">
-            <label for="Descricao">Descri√ß√£o do problema</label>
+            <label for="Descricao">DescriÁ„o do problema</label>
             <textarea id="Descricao" name="Descricao" class="form-control" rows="5" placeholder="Descreva o problema com detalhes..."></textarea>
         </div>
 
-        <button type="submit" class="btn-submit">üì§ Enviar Chamado</button>
+        <button type="submit" class="btn-submit">?? Enviar Chamado</button>
     </form>
 
-    <footer>
-        Este site √© seguro e foi desenvolvido pela equipe do CATI.
-    </footer>
+    <div id="faqSugestao" style="display:none; margin-top:20px;">
+        <h4>?? Sugest„o para resolver o problema:</h4>
+        <p id="faqTexto" style="margin-bottom:15px;"></p>
+        <p>Essa sugest„o resolveu seu problema?</p>
+        <button onclick="faqResolvido(true)" class="btn-submit" style="background-color:#28a745;">? Sim, resolvido</button>
+        <button onclick="faqResolvido(false)" class="btn-submit" style="background-color:#dc3545;">? N„o, continuar com chamado</button>
+    </div>
 
-    <div id="faqSugestao" style="display:none; margin-top:20px;"> ////////  FAQ DE TESTE /////// COMECA AQUI /////////
-    <h4>üîß Sugest√£o para resolver o problema:</h4>
-    <p id="faqTexto" style="margin-bottom:15px;"></p>
-    <p>Essa sugest√£o resolveu seu problema?</p>
-    <button onclick="faqResolvido(true)" class="btn-submit" style="background-color:#28a745;">‚úÖ Sim, resolvido</button>
-    <button onclick="faqResolvido(false)" class="btn-submit" style="background-color:#dc3545;">‚ùå N√£o, continuar com chamado</button>
-</div>
+    <div id="iaResposta" style="display:none; margin-top:20px;">
+        <h4>?? Sugest„o da IA:</h4>
+        <p id="iaTexto" style="margin-bottom:15px;"></p>
+        <p>Essa sugest„o resolveu seu problema?</p>
+        <button onclick="iaResolvido(true)" class="btn-submit" style="background-color:#28a745;">? Sim, resolvido</button>
+        <button onclick="iaResolvido(false)" class="btn-submit" style="background-color:#dc3545;">? N„o, continuar com chamado</button>
+    </div>
+
+    <footer>
+        Este site È seguro e foi desenvolvido pela equipe do CATI.
+    </footer>
 </div>
 
 <script>
     const categorias = {
         "Hardware": ["Desktop", "Notebook", "Impressora"],
-        "Software": ["Sistema", "Aplicativo", "Atualiza√ß√£o"],
+        "Software": ["Sistema", "Aplicativo", "AtualizaÁ„o"],
         "Redes": ["Wi-Fi", "Cabo", "VPN"],
-        "Telefonia": ["Ramal", "Chamada", "Configura√ß√£o"]
+        "Telefonia": ["Ramal", "Chamada", "ConfiguraÁ„o"]
     };
 
     const subcategorias = {
-        "Desktop": ["Configura√ß√£o", "Sem imagem", "Lento"],
+        "Desktop": ["ConfiguraÁ„o", "Sem imagem", "Lento"],
         "Notebook": ["Bateria", "Tela quebrada", "Teclado"],
-        "Impressora": ["Sem papel", "Erro de impress√£o", "Conex√£o falha"],
-        "Sistema": ["Erro de login", "Permiss√£o", "Tela travada"],
-        "Aplicativo": ["N√£o abre", "Erro ao salvar", "Atualiza√ß√£o"],
-        "Atualiza√ß√£o": ["Falha", "Vers√£o incompat√≠vel"],
-        "Wi-Fi": ["Sem conex√£o", "Sinal fraco", "Queda constante"],
+        "Impressora": ["Sem papel", "Erro de impress„o", "Conex„o falha"],
+        "Sistema": ["Erro de login", "Permiss„o", "Tela travada"],
+        "Aplicativo": ["N„o abre", "Erro ao salvar", "AtualizaÁ„o"],
+        "AtualizaÁ„o": ["Falha", "Vers„o incompatÌvel"],
+        "Wi-Fi": ["Sem conex„o", "Sinal fraco", "Queda constante"],
         "Cabo": ["Sem sinal", "Porta danificada"],
-        "VPN": ["Instabilidade", "N√£o conecta"],
+        "VPN": ["Instabilidade", "N„o conecta"],
         "Ramal": ["Mudo", "Sem linha", "Chamada externa"],
-        "Chamada": ["Interrup√ß√£o", "Eco", "Ru√≠do"],
-        "Configura√ß√£o": ["Desvio de chamadas", "Toque personalizado"]
+        "Chamada": ["InterrupÁ„o", "Eco", "RuÌdo"],
+        "ConfiguraÁ„o": ["Desvio de chamadas", "Toque personalizado"]
+    };
+
+    const faq = {
+        "Redes|Wi-Fi|Queda constante": "Desligue o modem da tomada, aguarde 15 segundos e ligue novamente.",
+        "Telefonia|Ramal|Mudo": "Verifique se o cabo do telefone est· bem conectado e se h· sinal no aparelho.",
+        "Hardware|Desktop|Lento": "Reinicie o computador e feche programas em segundo plano.",
+        "Software|Sistema|Erro de login": "Verifique se o CAPS LOCK est· ativado e tente redefinir sua senha."
     };
 
     function atualizarCategorias() {
@@ -156,17 +171,12 @@
         document.getElementById("Titulo").value = "";
 
         if (categorias[servico]) {
-            categorias[servico].forEach(function (item) {
+            categorias[servico].forEach(item => {
                 const opt = document.createElement("option");
                 opt.value = item;
                 opt.innerHTML = item;
                 categoria.appendChild(opt);
             });
-        } else {
-            const opt = document.createElement("option");
-            opt.value = "";
-            opt.innerHTML = "Selecione um servi√ßo primeiro";
-            categoria.appendChild(opt);
         }
     }
 
@@ -177,63 +187,72 @@
         document.getElementById("Titulo").value = "";
 
         if (subcategorias[categoria]) {
-            subcategorias[categoria].forEach(function (item) {
+            subcategorias[categoria].forEach(item => {
                 const opt = document.createElement("option");
                 opt.value = item;
                 opt.innerHTML = item;
                 subcategoria.appendChild(opt);
             });
-        } else {
-            const opt = document.createElement("option");
-            opt.value = "";
-            opt.innerHTML = "Selecione uma categoria primeiro";
-            subcategoria.appendChild(opt);
         }
     }
 
-    function atualizarTitulo() {
+        function atualizarTitulo() {
+        const servico = document.getElementById("Servico").value;
+        const categoria = document.getElementById("Categoria").value;
+        const subcategoria = document.getElementById("Subcategoria").value;
+        const titulo = `${servico} - ${categoria} - ${subcategoria}`;
+        document.getElementById("Titulo").value = titulo;
+
+        const chave = `${servico}|${categoria}|${subcategoria}`;
+        if (faq[chave]) {
+            document.getElementById("faqTexto").innerText = faq[chave];
+            document.getElementById("faqSugestao").style.display = "block";
+            document.getElementById("iaResposta").style.display = "none";
+            document.querySelector("form").style.display = "none";
+        } else {
+            document.getElementById("faqSugestao").style.display = "none";
+            buscarSugestaoIA(); // Chama IA se n„o houver sugest„o no FAQ
+        }
+    }
+
+    function faqResolvido(resolvido) {
+        if (resolvido) {
+            window.location.href = "/Cliente/Dashboard";
+        } else {
+            document.getElementById("faqSugestao").style.display = "none";
+            document.querySelector("form").style.display = "block";
+        }
+    }
+
+    async function buscarSugestaoIA() {
         const servico = document.getElementById("Servico").value;
         const categoria = document.getElementById("Categoria").value;
         const subcategoria = document.getElementById("Subcategoria").value;
 
-        if (servico && categoria && subcategoria) {
-            document.getElementById("Titulo").value = `${servico} - ${categoria} - ${subcategoria}`;
-        } else {
-            document.getElementById("Titulo").value = "";
+        if (!servico || !categoria || !subcategoria) return;
+
+        try {
+            const response = await fetch("/Chamado/SugestaoIA", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ servico, categoria, subcategoria })
+            });
+
+            const data = await response.json();
+            document.getElementById("iaTexto").innerText = data.sugestao;
+            document.getElementById("iaResposta").style.display = "block";
+            document.querySelector("form").style.display = "none";
+        } catch (error) {
+            console.error("Erro ao buscar sugest„o da IA:", error);
         }
     }
 
-const faq = { ////////  FAQ DE TESTE /////// COMECA AQUI /////////
-    "Redes|Wi-Fi|Queda constante": "Desligue o modem da tomada, aguarde 15 segundos e ligue novamente.",
-    "Telefonia|Ramal|Mudo": "Verifique se o cabo do telefone est√° bem conectado e se h√° sinal no aparelho.",
-    "Hardware|Desktop|Lento": "Reinicie o computador e feche programas em segundo plano.",
-    "Software|Sistema|Erro de login": "Verifique se o CAPS LOCK est√° ativado e tente redefinir sua senha."
-};
-
-function atualizarTitulo() {
-    const servico = document.getElementById("Servico").value;
-    const categoria = document.getElementById("Categoria").value;
-    const subcategoria = document.getElementById("Subcategoria").value;
-    const titulo = `${servico} - ${categoria} - ${subcategoria}`;
-    document.getElementById("Titulo").value = titulo;
-
-    const chave = `${servico}|${categoria}|${subcategoria}`;
-    if (faq[chave]) {
-        document.getElementById("faqTexto").innerText = faq[chave];
-        document.getElementById("faqSugestao").style.display = "block";
-        document.querySelector("form").style.display = "none";
-    } else {
-        document.getElementById("faqSugestao").style.display = "none";
-        document.querySelector("form").style.display = "block";
+    function iaResolvido(resolvido) {
+        if (resolvido) {
+            window.location.href = "/Cliente/Dashboard";
+        } else {
+            document.getElementById("iaResposta").style.display = "none";
+            document.querySelector("form").style.display = "block";
+        }
     }
-}
-
-function faqResolvido(resolvido) {
-    if (resolvido) {
-        window.location.href = "/Cliente/Dashboard"; // ou /Tecnico/Dashboard
-    } else {
-        document.getElementById("faqSugestao").style.display = "none";
-        document.querySelector("form").style.display = "block";
-    }
-}
 </script>

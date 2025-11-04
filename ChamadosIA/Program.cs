@@ -10,6 +10,10 @@ builder.Services.AddSession(options =>
 
 builder.Services.AddControllersWithViews();
 
+// Adiciona o serviço de IA
+builder.Services.AddHttpClient<ChamadosIA.Services.IAssistenteService>();
+
+
 var app = builder.Build();
 
 // Middleware de sessão precisa vir **antes** do UseAuthorization
