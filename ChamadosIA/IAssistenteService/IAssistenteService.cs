@@ -8,7 +8,7 @@ namespace ChamadosIA.Services
     public class IAssistenteService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "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"; // Chave API
+        private readonly string _apiKey = "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"; // 
         private readonly string _endpoint = "https://api.openai.com/v1/chat/completions";
 
         public IAssistenteService(HttpClient httpClient)

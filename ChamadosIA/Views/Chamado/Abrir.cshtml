@@ -118,6 +118,7 @@
         <button onclick="faqResolvido(true)" class="btn-submit" style="background-color:#28a745;">? Sim, resolvido</button>
         <button onclick="faqResolvido(false)" class="btn-submit" style="background-color:#dc3545;">? Não, continuar com chamado</button>
     </div>
+   
 
     <div id="iaResposta" style="display:none; margin-top:20px;">
         <h4>?? Sugestão da IA:</h4>
@@ -212,7 +213,7 @@
         } else {
             document.getElementById("faqSugestao").style.display = "none";
             buscarSugestaoIA(); // Chama IA se não houver sugestão no FAQ
-        }
+        } 
     }
 
     function faqResolvido(resolvido) {
