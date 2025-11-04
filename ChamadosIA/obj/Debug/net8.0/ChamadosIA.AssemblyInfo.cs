@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChamadosIA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+caf733899bc1451ad49915ceab36dbbcc5b39225")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+719a08ad7bf029c5f47771ee10390371346ae7dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChamadosIA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChamadosIA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
